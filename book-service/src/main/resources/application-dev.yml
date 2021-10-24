@@ -1,0 +1,15 @@
+server:
+  servlet:
+    context-path: /book-service
+  port: 8090
+  
+spring:  datasource:    url: jdbc:postgresql://localhost:5432/lib_books?createDatabaseIfNotExist
+    username: postgres
+    password: 
+    
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate.dialect: org.hibernate.dialect.PostgreSQLDialect
