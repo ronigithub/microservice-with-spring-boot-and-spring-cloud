@@ -21,7 +21,7 @@ public class AccountController {
         accountService.create(account);
     }
 
-    @PostMapping("/all")
+    @PostMapping("/myDetails")
     public List<Account> findAll(@RequestBody Customer customer) {
         return accountService.findAll(customer);
     }

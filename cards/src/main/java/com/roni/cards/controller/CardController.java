@@ -1,9 +1,12 @@
 package com.roni.cards.controller;
 
 import com.roni.cards.model.Card;
+import com.roni.cards.model.Customer;
 import com.roni.cards.service.CardService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/cards")
@@ -16,5 +19,10 @@ public class CardController {
     @PostMapping
     public void create(@RequestBody Card card) {
         cardService.create(card);
+    }
+
+    @PostMapping("/myCards")
+    public List<Card> findAll(@RequestBody Customer customer) {
+        return cardService.findAll(customer);
     }
 }
